@@ -1,0 +1,74 @@
+import codecs
+import sys
+from collections import defaultdict
+import argparse
+
+parser = argparse.ArgumentParser(description="create FSAs from a CoNLL style file, one word with possible tags per line")
+parser.add_argument('input', help='input text file')
+parser.add_argument('--fsa', help='make FSA', action="store_true")
+parser.add_argument('--fst', help="make FST", action="store_true")
+parser.add_argument('--prefix', help="output prefix (default: automaton)", default='automaton')
+
+args = parser.parse_args()
+
+TAGS = set(['.','ADJ','ADP','ADV','CONJ','DET','NOUN','NUM','PRON','PRT','VERB','X'])
+
+begin = set()
+end = set()
+emissions = defaultdict(set)
+transitions = defaultdict(set)
+
+current = []
+for line in codecs.open(args.input, encoding='utf-8'):
+    line = line.strip()
+
+    if line:
+        if line.startswith('UNK'):
+            emissions['UNK'] = TAGS
+            current.append(TAGS)
+
+        else:
+            word, tags = line.split('\t')
+            tags = tags.split(',')
+            if word == '"':
+                word = "''"
+
+            emissions[word] = tags
+
+            current.append(tags)
+
+    else:
+        begin |= set(current[0])
+        end |= set(current[-1])
+        for i, tags in enumerate(current):
+            if i < (len(current)-1):
+                for t1 in tags:
+                    transitions[t1] |= set(current[i+1])
+        current = []
+
+
+if args.fsa:
+    fsa = codecs.open('%s.fsa' % args.prefix, 'w', encoding='utf-8')
+
+    fsa.write('S\n')
+    for word, tags in emissions.items():
+        for tag in tags:
+            fsa.write('(S (S "%s" "%s"))\n' % (tag, word))
+    fsa.close()
+
+if args.fst:
+    fst = codecs.open('%s.fst' % args.prefix, 'w', encoding='utf-8')
+
+    fst.write('END\n')
+    for tag in begin:
+        fst.write('(S (%s *e* "%s"))\n' % (tag, tag))
+
+    for tag1, tags in transitions.items():
+        for tag2 in tags:
+            fst.write('(%s (%s *e* "%s"))\n' % (tag1, tag2, tag2))
+
+    for tag in end:
+        fst.write('(%s (END *e* *e*))\n' % (tag))
+
+    fst.close()
+

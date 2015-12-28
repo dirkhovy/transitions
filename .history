@@ -1,0 +1,631 @@
+2014-11-01.20-37-24.Poo-Corner-2.local python ../../nsoc/src/extract_target_var_corpora.py 
+2014-11-01.20-37-31.Poo-Corner-2.local python ../../nsoc/src/extract_target_var_corpora.py -h
+2014-11-01.20-39-24.Poo-Corner-2.local python ../../nsoc/src/extract_target_var_corpora.py --json ../embeddings/data/JSON/united_kingdom.auto-adjusted_gender.jsonl --dependent gender --prefix data/united_kingdom
+2014-11-01.20-39-26.Poo-Corner-2.local ls data/
+2014-11-01.20-39-57.Poo-Corner-2.local rm data/united_kingdom.*
+2014-11-01.20-40-34.Poo-Corner-2.local cp ../../en.tags.li data/
+2014-11-01.20-43-05.Poo-Corner-2.local scp dirkh@gardar.nhpc.hi.is:/scratch/dirkh/trustpilot/data/gender/united_*SEP.tok.phr data/
+2014-11-01.20-43-44.Poo-Corner-2.local scp dirkh@gardar.nhpc.hi.is:/scratch/dirkh/trustpilot/data/gender/united_*male.SEP.tok.phr data/
+2014-11-01.20-45-13.Poo-Corner-2.local for f in data/*phr; do sed 's/_/ /g' $f > tmp; mv tmp $f; done
+2014-11-01.20-48-47.Poo-Corner-2.local python src/tag_unambiguous_tweets.py --dictionary data/en.tags.li data/united_states.male.SEP.tok.phr 
+2014-11-01.20-49-10.Poo-Corner-2.local python src/tag_unambiguous_tweets.py --dictionary data/en.tags.li data/united_states.male.SEP.tok.phr > tmp
+2014-11-01.20-51-47.Poo-Corner-2.local python src/tag_unambiguous_tweets.py --dictionary data/en.tags.li data/united_states.male.SEP.tok.phr > tmp
+2014-11-01.20-56-10.Poo-Corner-2.local python src/tag_unambiguous_tweets.py --dictionary data/en.tags.li data/united_states.male.SEP.tok.phr |m
+2014-11-01.20-56-26.Poo-Corner-2.local python src/tag_unambiguous_tweets.py --dictionary data/en.tags.li data/united_states.male.SEP.tok.phr > tmp
+2014-11-01.20-56-52.Poo-Corner-2.local python src/tag_unambiguous_tweets.py --dictionary data/en.tags.li data/united_states.male.SEP.tok.phr > tmp
+2014-11-01.21-00-01.Poo-Corner-2.local python src/tag_unambiguous_tweets.py --dictionary data/en.tags.li data/united_states.male.SEP.tok.phr |m
+2014-11-01.21-04-00.Poo-Corner-2.local python src/tokenize.py data/united_states.male.SEP.tok.phr |m
+2014-11-01.21-04-02.Poo-Corner-2.local python src/tokenize.py data/united_states.male.SEP.tok.phr |m
+2014-11-01.21-04-04.Poo-Corner-2.local python src/tokenize.py data/united_states.male.SEP.tok.phr
+2014-11-01.21-05-26.Poo-Corner-2.local python src/tokenize.py data/united_states.male.SEP.tok.phr
+2014-11-01.21-05-50.Poo-Corner-2.local python src/tokenize.py data/united_states.male.SEP.tok.phr
+2014-11-01.21-10-07.Poo-Corner-2.local for f in data/*phr; do python src/tokenize.py $f > tmp; mv tmp $f; done
+2014-11-01.21-14-18.Poo-Corner-2.local python src/tag_unambiguous_tweets.py --dictionary data/en.tags.li data/united_states.male.SEP.tok.phr |m
+2014-11-01.21-14-35.Poo-Corner-2.local grep passport data/united_states.male.SEP.tok.phr 
+2014-11-01.21-14-45.Poo-Corner-2.local grep passport data/united_states.male.SEP.tok.phr |m
+2014-11-01.21-17-07.Poo-Corner-2.local python src/tokenize.py data/united_states.male.SEP.tok.phr|m
+2014-11-01.21-18-19.Poo-Corner-2.local python src/tokenize.py data/united_states.male.SEP.tok.phr|m
+2014-11-01.21-44-17.Poo-Corner-2.local lst data/
+2014-11-01.21-50-17.Poo-Corner-2.local lst data/
+2014-11-01.21-52-31.Poo-Corner-2.local lst data/
+2014-11-01.21-52-44.Poo-Corner-2.local sort data/united_kingdom.female.SEP.tok.phr |uniq|wc -l
+2014-11-01.21-53-01.Poo-Corner-2.local set LC_ALL='C'
+2014-11-01.21-53-03.Poo-Corner-2.local sort data/united_kingdom.female.SEP.tok.phr |uniq|wc -l
+2014-11-01.21-55-08.Poo-Corner-2.local for f in data/*phr; do python src/tokenize.py $f > tmp; mv tmp $f; done
+2014-11-01.21-57-24.Poo-Corner-2.local lst data/
+2014-11-01.21-57-46.Poo-Corner-2.local lst data/
+2014-11-01.22-03-38.Poo-Corner-2.local lst data/
+2014-11-01.22-04-03.Poo-Corner-2.local rm data/*BLCD*
+2014-11-01.22-04-30.Poo-Corner-2.local lst data/
+2014-11-01.22-07-54.Poo-Corner-2.local tail data/united_states.*
+2014-11-01.22-08-55.Poo-Corner-2.local python src/tag_unambiguous_tweets.py --dictionary data/en.tags.li data/united_states.male.SEP.tok.phr |m
+2014-11-01.22-18-23.Poo-Corner-2.local python src/tag_unambiguous_tweets.py --dictionary data/en.tags.li data/united_states.male.SEP.tok.phr |m
+2014-11-01.22-29-50.Poo-Corner-2.local lst data/
+2014-11-01.22-30-04.Poo-Corner-2.local for f in data/*phr; do python src/tag_unambiguous_tweets.py --dictionary data/en.tags.li $f > $f.possible_tags; done
+2014-11-01.22-30-05.Poo-Corner-2.local lst data/
+2014-11-01.22-30-12.Poo-Corner-2.local lst data/
+2014-11-01.23-41-22.Poo-Corner-2.local c
+2014-11-01.23-53-12.Poo-Corner-2.local python src/create_data.py data/united_states.male.SEP.tok.phr.possible_tags |m
+2014-11-01.23-55-48.Poo-Corner-2.local python src/create_data.py data/united_states.male.SEP.tok.phr.possible_tags |m
+2014-11-01.23-56-03.Poo-Corner-2.local python src/create_data.py data/united_states.male.SEP.tok.phr.possible_tags |m
+2014-11-02.00-00-31.Poo-Corner-2.local awk -F "\t" '{print $2}' data/united_kingdom.male.SEP.tok.phr| tr ',' '\n' |sort|uniq
+2014-11-02.00-03-07.Poo-Corner-2.local awk -F "\t" '{print $2}' data/united_kingdom.male.SEP.tok.phr| tr ',' '\n'
+2014-11-02.00-03-40.Poo-Corner-2.local awk -F "\t" '{print $2}' data/united_kingdom.male.SEP.tok.phr.possible_tags| tr ',' '\n'
+2014-11-02.00-03-41.Poo-Corner-2.local awk -F "\t" '{print $2}' data/united_kingdom.male.SEP.tok.phr.possible_tags| tr ',' '\n'
+2014-11-02.00-07-24.Poo-Corner-2.local awk -F "\t" '{print $2}' data/united_kingdom.male.SEP.tok.phr.possible_tags| tr ',' '\n'|sort|uniq
+2014-11-02.00-10-42.Poo-Corner-2.local awk -F "\t" '{print $2}' data/united_states.male.SEP.tok.phr.possible_tags| tr ',' '\n'|sort|uniq
+2014-11-02.00-27-51.Poo-Corner-2.local python src/create_fsas.py data/united_states.male.SEP.tok.phr.possible_tags|m
+2014-11-02.00-29-29.Poo-Corner-2.local python src/create_fsas.py data/united_states.male.SEP.tok.phr.possible_tags|m
+2014-11-02.00-29-32.Poo-Corner-2.local python src/create_fsas.py data/united_states.male.SEP.tok.phr.possible_tags|m
+2014-11-02.00-30-05.Poo-Corner-2.local python src/create_fsas.py data/united_states.male.SEP.tok.phr.possible_tags|m
+2014-11-02.00-31-10.Poo-Corner-2.local python src/create_fsas.py data/united_states.male.SEP.tok.phr.possible_tags|m
+2014-11-02.00-31-55.Poo-Corner-2.local python src/create_fsas.py data/united_states.male.SEP.tok.phr.possible_tags|m
+2014-11-02.00-32-17.Poo-Corner-2.local python src/create_fsas.py data/united_states.male.SEP.tok.phr.possible_tags|m
+2014-11-02.00-33-50.Poo-Corner-2.local python src/create_fsas.py data/united_states.male.SEP.tok.phr.possible_tags|m
+2014-11-02.00-35-24.Poo-Corner-2.local python src/create_fsas.py data/united_states.male.SEP.tok.phr.possible_tags|m
+2014-11-02.00-37-25.Poo-Corner-2.local python src/create_fsas.py data/united_states.male.SEP.tok.phr.possible_tags|m
+2014-11-02.00-39-29.Poo-Corner-2.local python src/create_fsas.py data/united_states.male.SEP.tok.phr.possible_tags|m
+2014-11-02.15-16-51.Poo-Corner-2.local python src/create_fsas.py --fsa data/united_states.male.SEP.tok.phr.possible_tags
+2014-11-02.15-17-38.Poo-Corner-2.local python src/create_fsas.py --fsa data/united_states.male.SEP.tok.phr.possible_tags
+2014-11-02.15-19-04.Poo-Corner-2.local python src/create_fsas.py --fsa data/united_states.male.SEP.tok.phr.possible_tags
+2014-11-02.15-19-21.Poo-Corner-2.local python src/create_fsas.py --fsa data/united_states.male.SEP.tok.phr.possible_tags
+2014-11-02.15-22-13.Poo-Corner-2.local python src/create_fsas.py --fsa data/united_states.male.SEP.tok.phr.possible_tags
+2014-11-02.15-22-43.Poo-Corner-2.local python src/create_fsas.py --fsa data/united_states.male.SEP.tok.phr.possible_tags
+2014-11-02.15-23-37.Poo-Corner-2.local python src/create_fsas.py --fsa data/united_states.male.SEP.tok.phr.possible_tags
+2014-11-02.15-24-34.Poo-Corner-2.local python src/create_fsas.py --fsa data/united_states.male.SEP.tok.phr.possible_tags
+2014-11-02.15-26-23.Poo-Corner-2.local python src/create_fsas.py --fsa data/united_states.male.SEP.tok.phr.possible_tags
+2014-11-02.15-26-39.Poo-Corner-2.local carmel-c automaton.fsa 
+2014-11-02.15-26-45.Poo-Corner-2.local carmel -c automaton.fsa 
+2014-11-02.15-26-51.Poo-Corner-2.local carmel -g 5 automaton.fsa 
+2014-11-02.15-27-06.Poo-Corner-2.local carmel -OEQWg 5 automaton.fsa 
+2014-11-02.15-27-09.Poo-Corner-2.local carmel -1OEQWg 5 automaton.fsa 
+2014-11-02.15-27-14.Poo-Corner-2.local carmel -1nIEQWg 5 automaton.fsa 
+2014-11-02.15-27-19.Poo-Corner-2.local carmel -1nEQWg 5 automaton.fsa 
+2014-11-02.15-27-23.Poo-Corner-2.local carmel -1nEWg 5 automaton.fsa 
+2014-11-02.15-27-36.Poo-Corner-2.local carmel -1nEWHJ automaton.fsa 
+2014-11-02.15-28-13.Poo-Corner-2.local grep UNK automaton.fsa 
+2014-11-02.15-28-22.Poo-Corner-2.local grep "''" automaton.fsa 
+2014-11-02.15-29-33.Poo-Corner-2.local python src/create_fsas.py --fst data/united_states.male.SEP.tok.phr.possible_tags
+2014-11-02.15-30-03.Poo-Corner-2.local carmel -c automaton.fst 
+2014-11-02.15-33-11.Poo-Corner-2.local python src/create_fsas.py --fst data/united_states.male.SEP.tok.phr.possible_tags
+2014-11-02.15-33-22.Poo-Corner-2.local carmel -c automaton.fst 
+2014-11-02.15-34-07.Poo-Corner-2.local emacs automaton.fst
+2014-11-02.15-34-09.Poo-Corner-2.local carmel -c automaton.fst 
+2014-11-02.15-34-19.Poo-Corner-2.local emacs automaton.fst
+2014-11-02.15-34-20.Poo-Corner-2.local carmel -c automaton.fst 
+2014-11-02.15-34-27.Poo-Corner-2.local carmel -1nEQWg 5 automaton.fst 
+2014-11-02.15-34-35.Poo-Corner-2.local carmel -a1nEQWg 5 automaton.fst automaton.fsa
+2014-11-02.15-34-51.Poo-Corner-2.local carmel -a1nEqWg 5 automaton.fst automaton.fsa
+2014-11-02.15-34-56.Poo-Corner-2.local carmel -a1nEQOWg 5 automaton.fst automaton.fsa
+2014-11-02.15-35-00.Poo-Corner-2.local carmel -a1nEQIWg 5 automaton.fst automaton.fsa
+2014-11-02.15-35-05.Poo-Corner-2.local carmel -a1ng 5 automaton.fst automaton.fsa
+2014-11-02.15-36-02.Poo-Corner-2.local python src/create_data.py data/united_states.male.SEP.tok.phr.possible_tags > automaton.data
+2014-11-02.15-36-17.Poo-Corner-2.local head -20  automaton.data 
+2014-11-02.15-36-23.Poo-Corner-2.local head -20  automaton.data > tmp
+2014-11-02.15-37-01.Poo-Corner-2.local carmel --train-cascade automaton.data automaton.fst automaton.fsa
+2014-11-02.15-37-08.Poo-Corner-2.local carmel --train-cascade tmp automaton.fst automaton.fsa
+2014-11-02.15-37-36.Poo-Corner-2.local carmel --train-cascade -aHJm tmp automaton.fst automaton.fsa
+2014-11-02.15-37-45.Poo-Corner-2.local carmel --train-cascade -aHJmd tmp automaton.fst automaton.fsa
+2014-11-02.15-37-53.Poo-Corner-2.local carmel --train-cascade -aHJmz tmp automaton.fst automaton.fsa
+2014-11-02.15-37-59.Poo-Corner-2.local carmel --train-cascade -aHJmj tmp automaton.fst automaton.fsa
+2014-11-02.15-38-00.Poo-Corner-2.local carmel --train-cascade -aHJmz tmp automaton.fst automaton.fsa
+2014-11-02.15-38-23.Poo-Corner-2.local carmel|m
+2014-11-02.15-38-27.Poo-Corner-2.local carmel --train-cascade -aHJmZ tmp automaton.fst automaton.fsa
+2014-11-02.15-38-57.Poo-Corner-2.local ls data/
+2014-11-02.15-40-25.Poo-Corner-2.local cat data/*tags| sort| uniq > data/all.possible_tags
+2014-11-02.15-40-30.Poo-Corner-2.local ls data/all.possible_tags 
+2014-11-02.15-40-33.Poo-Corner-2.local rm data/all.possible_tags 
+2014-11-02.15-40-39.Poo-Corner-2.local mkdir bin
+2014-11-02.15-41-22.Poo-Corner-2.local cp ~/Tools/graehl/carmel/bin/linux64/carmel bin/
+2014-11-02.15-41-27.Poo-Corner-2.local ./bin/carmel 
+2014-11-02.15-44-20.Poo-Corner-2.local scp ../transitions.zip dirkh@gardar.nhpc.hi.is:~/trustpilot/
+2014-11-02.16-40-21.Poo-Corner-2.local scp ../transitions.zip dirkh@gardar.nhpc.hi.is:~/trustpilot/
+2014-11-02.16-40-23.Poo-Corner-2.local ls ~/Tools/
+2014-11-02.16-40-32.Poo-Corner-2.local ls ~/Tools/graehl/
+2014-11-02.16-40-40.Poo-Corner-2.local ls ~/tar
+2014-11-02.16-44-51.Poo-Corner-2.local scp ~/tmp/carmel.tar.gz dirkh@gardar.nhpc.hi.is:~/lib/
+2014-11-03.08-50-01.Poo-Corner-2.local scp ~/tmp/carmel.tar.gz dirkh@gardar.nhpc.hi.is:~/lib/
+2014-11-03.13-09-01.c206.hum-cst.sc.ku.dk scp dirkh@gardar.nhpc.hi.is:~/transitions/data/*trained data/
+2014-11-03.13-18-28.c206.hum-cst.sc.ku.dk bd
+2014-11-03.13-18-34.c206.hum-cst.sc.ku.dk bd
+2014-11-03.13-18-58.c206.hum-cst.sc.ku.dk cat ../../../probabilisticAbduction/src/model2KB2.py 
+2014-11-03.13-47-44.c206.hum-cst.sc.ku.dk grep ax ~/Dropbox/copenhagen/teaching/scientific_programming/scientific-programming-2014/homework/assignment_2/Homework2\ Results.ipynb 
+2014-11-03.13-48-19.c206.hum-cst.sc.ku.dk grep inch ~/Dropbox/copenhagen/teaching/scientific_programming/scientific-programming-2014/homework/assignment_2/Homework2\ Results.ipynb 
+2014-11-03.13-49-02.c206.hum-cst.sc.ku.dk grep import ~/Dropbox/copenhagen/teaching/scientific_programming/scientific-programming-2014/homework/assignment_2/Homework2\ Results.ipynb 
+2014-11-03.13-54-34.c206.hum-cst.sc.ku.dk grep sort ../embeddings/visualize\ results.ipynb 
+2014-11-03.13-55-48.c206.hum-cst.sc.ku.dk grep plot ../embeddings/visualize\ results.ipynb 
+2014-11-03.14-12-41.c206.hum-cst.sc.ku.dk ls ../../../probabilisticAbduction/src/
+2014-11-03.14-12-47.c206.hum-cst.sc.ku.dk ls ../../../probabilisticAbduction/
+2014-11-03.14-13-21.c206.hum-cst.sc.ku.dk ls ../../../probabilisticAbduction/pbs/run_evaluation.OU 
+2014-11-03.14-13-43.c206.hum-cst.sc.ku.dk ls ../../../probabilisticAbduction/src/
+2014-11-03.15-27-51.c206.hum-cst.sc.ku.dk ls ../../nsoc/src/
+2014-11-03.15-37-53.c206.hum-cst.sc.ku.dk scp ../../nsoc/src.zip dirkh@gardar.nhpc.hi.is:~/nsoc/
+2014-11-03.15-43-12.c206.hum-cst.sc.ku.dk scp ../../nsoc/src.zip dirkh@gardar.nhpc.hi.is:~/nsoc/
+2014-11-03.15-43-14.c206.hum-cst.sc.ku.dk ls
+2014-11-03.15-43-21.c206.hum-cst.sc.ku.dk rm automaton.*
+2014-11-03.15-43-27.c206.hum-cst.sc.ku.dk rm tmp 
+2014-11-03.16-03-17.c206.hum-cst.sc.ku.dk ls data/
+2014-11-03.16-03-26.c206.hum-cst.sc.ku.dk ls data/*phr
+2014-11-03.17-38-10.c206.hum-cst.sc.ku.dk ls ~/Downloads/
+2014-11-03.17-38-21.c206.hum-cst.sc.ku.dk ls ~/Downloads/
+2014-11-03.17-38-50.c206.hum-cst.sc.ku.dk scp ~/Downloads/aspell* dirkh@gardar.nhpc.hi.is:~/
+2014-11-03.18-05-46.c206.hum-cst.sc.ku.dk bd
+2014-11-03.18-06-18.c206.hum-cst.sc.ku.dk scp src/filter_spelling_vars.py dirkh@gardar.nhpc.hi.is:~/nsoc/src/
+2014-11-03.18-07-20.c206.hum-cst.sc.ku.dk scp src/filter_spelling_vars.py dirkh@gardar.nhpc.hi.is:~/nsoc/src/
+2014-11-03.18-26-02.c206.hum-cst.sc.ku.dk scp src/filter_spelling_vars.py dirkh@gardar.nhpc.hi.is:~/nsoc/src/
+2014-11-03.19-42-53.Poo-Corner-2.local scp ../../nsoc/src/find_syntactic_variants_MR.py dirkh@gardar.nhpc.hi.is:~/nsoc/src/
+2014-11-03.19-45-48.Poo-Corner-2.local scp ../../nsoc/src/find_syntactic_variants_MR.py dirkh@gardar.nhpc.hi.is:~/nsoc/src/
+2014-11-03.19-45-57.Poo-Corner-2.local scp ../../nsoc/src/find_syntactic_variants_MR.py dirkh@gardar.nhpc.hi.is:~/nsoc/src/
+2014-11-03.19-46-35.Poo-Corner-2.local head -100 data/united_states.male.SEP.tok.phr 
+2014-11-03.19-46-39.Poo-Corner-2.local head -100 data/united_states.male.SEP.tok.phr > tmp
+2014-11-03.19-47-01.Poo-Corner-2.local python ../../nsoc/src/find_syntactic_variants_MR.py tmp
+2014-11-03.19-47-28.Poo-Corner-2.local python ../../nsoc/src/find_syntactic_variants_MR.py tmp
+2014-11-03.19-48-23.Poo-Corner-2.local python ../../nsoc/src/find_syntactic_variants_MR.py tmp
+2014-11-03.19-48-35.Poo-Corner-2.local python ../../nsoc/src/find_syntactic_variants_MR.py --context 2 tmp
+2014-11-03.19-48-55.Poo-Corner-2.local python ../../nsoc/src/find_syntactic_variants_MR.py --context 2 tmp|m
+2014-11-03.19-49-05.Poo-Corner-2.local scp ../../nsoc/src/find_syntactic_variants_MR.py dirkh@gardar.nhpc.hi.is:~/nsoc/src/
+2014-11-04.00-11-00.Poo-Corner-2.local scp ~/Downloads/aspell6-en* dirkh@gardar.nhpc.hi.is:~/lib/dicts/
+2014-11-06.13-12-44.c206.hum-cst.sc.ku.dk ls src/
+2015-04-15.13-42-36.c086.hum-cst.sc.ku.dk python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging 
+2015-04-15.13-44-21.c086.hum-cst.sc.ku.dk python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging 
+2015-04-15.13-44-48.c086.hum-cst.sc.ku.dk ls src/
+2015-04-15.13-45-06.c086.hum-cst.sc.ku.dk mv src/tokenize.py src/tokenize_en.py
+2015-04-15.13-45-13.c086.hum-cst.sc.ku.dk rm src/tokenize.pyc 
+2015-04-15.13-45-30.c086.hum-cst.sc.ku.dk python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging 
+2015-04-15.13-56-22.c086.hum-cst.sc.ku.dk python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold
+2015-04-15.13-58-56.c086.hum-cst.sc.ku.dk python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold
+2015-04-15.14-00-01.c086.hum-cst.sc.ku.dk python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold
+2015-04-15.14-00-25.c086.hum-cst.sc.ku.dk python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold
+2015-04-15.21-34-02.Lowlands.local ipython
+2015-04-15.21-34-24.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold
+2015-04-15.21-35-03.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold
+2015-04-15.21-35-28.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold
+2015-04-15.21-35-41.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold
+2015-04-15.21-37-55.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold
+2015-04-15.21-39-45.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,  --names CoNLL,U35
+2015-04-15.21-40-01.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold  --names CoNLL,U35
+2015-04-15.21-40-56.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold  --names CoNLL,U35
+2015-04-15.21-41-52.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.21-43-58.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.21-44-49.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.21-45-33.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.21-47-38.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.21-48-03.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.21-52-01.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.22-00-43.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.22-03-50.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.22-04-50.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.22-04-55.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.22-05-41.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.22-06-23.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.22-08-13.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.22-10-00.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.22-10-37.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.22-12-00.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.22-13-17.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.22-16-48.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.22-18-59.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.22-21-19.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.22-25-44.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.22-27-09.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.22-28-36.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.22-29-05.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.22-29-39.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.22-30-51.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.22-33-28.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.22-34-43.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.23-28-18.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-15.23-31-00.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45
+2015-04-16.10-32-21.Lowlands.local conda install seaborne
+2015-04-16.10-34-08.Lowlands.local conda install seaborn
+2015-04-16.19-32-55.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/en/en.conll.tagging,../regional_probs/data/NUTS-2/samples/en/en.*U35*gold,../regional_probs/data/NUTS-2/samples/en/en.*O45*gold  --names CoNLL,U35,O45c
+2015-04-16.19-34-05.Lowlands.local python src/compare_transitions.py --input ../regional_probs/data/de/de.conll.tagging,../regional_probs/data/NUTS-2/samples/de/de.*U35*gold,../regional_probs/data/NUTS-2/samples/de/de.*O45*gold  --names CoNLL,U35,O45
+2015-04-16.20-01-39.Lowlands.local ls
+2015-04-16.20-01-51.Lowlands.local lst
+2015-04-18.16-04-33.Lowlands.local cp ~/Downloads/Hinton\ plot.ipynb ../regional_probs/notebooks/
+2015-04-18.18-58-52.Lowlands.local ls ../
+2015-04-18.18-59-05.Lowlands.local lst ~/Dropbox/
+2015-04-18.18-59-19.Lowlands.local lst ~/Dropbox/126\ -\ Stressed/
+2015-04-18.19-01-31.Lowlands.local cat ~/Dropbox/126\ -\ Stressed/Stressed\ -\ *\ out\ of\ 17.csv |awk -F 
+2015-04-18.19-01-32.Lowlands.local cat ~/Dropbox/126\ -\ Stressed/Stressed\ -\ *\ out\ of\ 17.csv |awk -F 
+2015-04-18.19-01-58.Lowlands.local cat ~/Dropbox/126\ -\ Stressed/Stressed\ -\ *\ out\ of\ 17.csv |awk -F ",'" '{print 4}'
+2015-04-18.19-02-03.Lowlands.local cat ~/Dropbox/126\ -\ Stressed/Stressed\ -\ *\ out\ of\ 17.csv |awk -F ",'" '{print $4}'
+2015-04-18.19-02-30.Lowlands.local cat ~/Dropbox/126\ -\ Stressed/Stressed\ -\ *\ out\ of\ 17.csv |awk -F ",\"" '{print $4}'
+2015-04-18.19-02-39.Lowlands.local cat ~/Dropbox/126\ -\ Stressed/Stressed\ -\ *\ out\ of\ 17.csv |awk -F ",\"" '{print $4}'|wc -l
+2015-04-18.19-02-59.Lowlands.local cat ~/Dropbox/126\ -\ Stressed/Stressed\ -\ *\ out\ of\ 17.csv |awk -F ",\"" '{print $4}'|sort -u|wc -l
+2015-04-18.19-19-03.Lowlands.local cat ~/Dropbox/126\ -\ Stressed/Stressed\ -\ *\ out\ of\ 17.csv |awk -F ",\"" '{print $4}'|m
+2015-04-18.19-30-13.Lowlands.local cat ~/Dropbox/126\ -\ Stressed/Stressed\ -\ *\ out\ of\ 17.csv |awk -F ",\"" '{print $4}'
+2015-04-18.19-30-46.Lowlands.local cat ~/Dropbox/126\ -\ Stressed/Stressed\ -\ *\ out\ of\ 17.csv |awk -F ",\"" '{print $4}'|grep "feeling stressed.\"$"
+2015-04-18.19-31-21.Lowlands.local cat ~/Dropbox/126\ -\ Stressed/Stressed\ -\ *\ out\ of\ 17.csv |awk -F ",\"" '{print $4}'|grep "- feeling stressed.\"$"
+2015-04-18.19-31-30.Lowlands.local cat ~/Dropbox/126\ -\ Stressed/Stressed\ -\ *\ out\ of\ 17.csv |awk -F ",\"" '{print $4}'|grep "\- feeling stressed.\"$"
+2015-04-18.19-31-38.Lowlands.local cat ~/Dropbox/126\ -\ Stressed/Stressed\ -\ *\ out\ of\ 17.csv |awk -F ",\"" '{print $4}'|grep "\- feeling stressed.\"$"|wc -l
+2015-04-18.19-32-23.Lowlands.local cat ~/Dropbox/126\ -\ Stressed/Stressed\ -\ *\ out\ of\ 17.csv |awk -F ",\"" '{print $4}'|grep "feeling stressed.\"$"|wc -l
+2015-04-18.19-32-36.Lowlands.local cat ~/Dropbox/126\ -\ Stressed/Stressed\ -\ *\ out\ of\ 17.csv |awk -F ",\"" '{print $4}'|grep "feeling stressed.\"$"|sort -u|wc -l
+2015-04-18.19-33-41.Lowlands.local cat ~/Dropbox/126\ -\ Stressed/Stressed\ -\ *\ out\ of\ 17.csv |awk -F ",\"" '{print $4}'|grep "feeling stressed.\"$"|sort -u|m
+2015-04-18.19-37-00.Lowlands.local cat ~/Dropbox/126\ -\ Stressed/Stressed\ -\ *\ out\ of\ 17.csv |awk -F ",\"" '{print $4}'|grep "feeling stressed[^\?]\"$"|sort -u|m
+2015-04-18.19-39-32.Lowlands.local cat ~/Dropbox/126\ -\ Stressed/Stressed\ -\ *\ out\ of\ 17.csv |awk -F ",\"" '{print $4}'|grep "feeling stressed[^\?]\"$"|sort -u > ../FB_stressed_statuses.txt
+2015-12-26.16-58-00.lowlands.fritz.box mkdir notebooks
+2015-12-26.16-58-04.lowlands.fritz.box ls src/
+2015-12-26.16-58-06.lowlands.fritz.box ls bin/
+2015-12-26.16-58-12.lowlands.fritz.box ls data/
+2015-12-26.16-58-37.lowlands.fritz.box ls
+2015-12-26.16-58-40.lowlands.fritz.box ls src/
+2015-12-26.17-06-58.lowlands.fritz.box bd
+2015-12-26.19-40-57.lowlands.fritz.box emacs fst
+2015-12-26.19-41-02.lowlands.fritz.box carmel -g fst 
+2015-12-26.19-41-08.lowlands.fritz.box carmel -g 5 fst 
+2015-12-26.19-41-20.lowlands.fritz.box carmel -O1ng 5 fst 
+2015-12-26.19-41-43.lowlands.fritz.box carmel -rO1ng 5 fst 
+2015-12-26.19-41-47.lowlands.fritz.box carmel -I1ng 5 fst 
+2015-12-26.21-49-46.lowlands.fritz.box 2to3 -w src/create_fsas.py 
+2015-12-26.21-49-53.lowlands.fritz.box 2to3 -w src/*.py 
+2015-12-26.22-52-51.lowlands.fritz.box ls data/
+2015-12-27.11-22-37.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --data
+2015-12-27.11-22-54.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dict data/en.tags.li --data
+2015-12-27.11-23-20.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --data
+2015-12-27.11-24-29.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --data
+2015-12-27.11-25-18.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --data
+2015-12-27.11-25-20.lowlands.fritz.box ls
+2015-12-27.11-27-13.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --data
+2015-12-27.11-27-15.lowlands.fritz.box ls
+2015-12-27.14-16-45.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst
+2015-12-27.14-20-26.lowlands.fritz.box carmlel -1ng 5 test.fst test.fsa
+2015-12-27.14-20-31.lowlands.fritz.box carmel -1ng 5 test.fst test.fsa
+2015-12-27.14-21-04.lowlands.fritz.box emacs test.fst
+2015-12-27.14-21-15.lowlands.fritz.box emacs test.fsa
+2015-12-27.14-21-37.lowlands.fritz.box carmel -1nHJ test.fsa
+2015-12-27.14-21-39.lowlands.fritz.box carmel -1nHJ test.fst
+2015-12-27.14-26-11.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst
+2015-12-27.14-26-25.lowlands.fritz.box carmel -1ng 5 test.fst test.fsa
+2015-12-27.14-26-38.lowlands.fritz.box carmel -a1ng 5 test.fst test.fsa
+2015-12-27.14-28-23.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst
+2015-12-27.14-29-13.lowlands.fritz.box carmel -a1ng 5 test.fst test.fsa
+2015-12-27.14-30-01.lowlands.fritz.box cp ../../gardar_safe/transitions/predict.sh .
+2015-12-27.14-30-35.lowlands.fritz.box sh predict.sh test.fsa test.fst test.test 
+2015-12-27.14-30-41.lowlands.fritz.box which carmel
+2015-12-27.14-30-44.lowlands.fritz.box carmel
+2015-12-27.14-31-04.lowlands.fritz.box bin/carmel 
+2015-12-27.14-31-07.lowlands.fritz.box ./bin/carmel 
+2015-12-27.14-31-23.lowlands.fritz.box .bin/carmel 
+2015-12-27.14-31-26.lowlands.fritz.box bin/carmel 
+2015-12-27.14-31-30.lowlands.fritz.box ls bin/carmel 
+2015-12-27.14-31-42.lowlands.fritz.box ls bin/carmel 
+2015-12-27.14-31-50.lowlands.fritz.box grep carmel ~/.profile
+2015-12-27.14-31-58.lowlands.fritz.box /Users/dirkhovy/Tools/graehl/carmel/bin/macosx/carmel
+2015-12-27.14-32-26.lowlands.fritz.box emacs predict.sh 
+2015-12-27.14-32-34.lowlands.fritz.box sh predict.sh test.fsa test.fst test.test 
+2015-12-27.14-33-06.lowlands.fritz.box cat predict.sh
+2015-12-27.14-33-23.lowlands.fritz.box cat test.test |m
+2015-12-27.14-33-57.lowlands.fritz.box carmel -qQbsriWIEk 1 test.fsa.noe test.fst
+2015-12-27.14-34-04.lowlands.fritz.box carmel -qQbsriWIEg 5 test.fsa.noe test.fst
+2015-12-27.14-34-17.lowlands.fritz.box carmel -qaQbsriWIEg 5 test.fsa.noe test.fst
+2015-12-27.14-34-28.lowlands.fritz.box carmel -qaQbsriWIEg 5 test.fsa.noe
+2015-12-27.14-34-43.lowlands.fritz.box carmel -qaQbsriWIEg 5 test.fsa
+2015-12-27.14-34-50.lowlands.fritz.box carmel -c test.fsa
+2015-12-27.14-35-02.lowlands.fritz.box carmel -g 5 test.fsa
+2015-12-27.14-35-09.lowlands.fritz.box carmel -g 5 test.fsa.noe 
+2015-12-27.14-36-44.lowlands.fritz.box carmel -qaQbsriWIEg 5 test.fsa test.fst
+2015-12-27.14-36-56.lowlands.fritz.box carmel -ag 5 test.fst test.fsa
+2015-12-27.14-37-15.lowlands.fritz.box cat -s test.test 
+2015-12-27.14-37-27.lowlands.fritz.box grep -v '^$' test.test 
+2015-12-27.14-37-36.lowlands.fritz.box carmel -ag 5 test.fst test.fsa
+2015-12-27.14-38-14.lowlands.fritz.box grep -v "^$" test.test| carmel -qQbsriWIEk 1 test.fsa test.fst
+2015-12-27.14-38-20.lowlands.fritz.box grep -v "^$" test.test| carmel -qQbsriWIEk 1 test.fsa.noe test.fst
+2015-12-27.14-38-36.lowlands.fritz.box grep -v "^$" test.test| carmel -qQbsliWIEk 1 test.fsa.noe test.fst
+2015-12-27.14-38-56.lowlands.fritz.box grep -v "^$" test.test| carmel -qQbsriWIEk 1  test.fst test.fsa.noe
+2015-12-27.14-39-02.lowlands.fritz.box grep -v "^$" test.test| carmel -qQbsliWIEk 1  test.fst test.fsa.noe
+2015-12-27.14-39-07.lowlands.fritz.box grep -v "^$" test.test| carmel -qQbsliWIEk 1  test.fst test.fsa
+2015-12-27.14-40-33.lowlands.fritz.box cat test.test| carmel -qQbsliWIEk 1  test.fst test.fsa.noe
+2015-12-27.14-40-42.lowlands.fritz.box cat test.test| carmel -qQbsriWIEk 1 test.fst test.fsa.noe
+2015-12-27.14-40-52.lowlands.fritz.box cat test.test| carmel -qQbsriWIEk 1 test.fsa.noe test.fst 
+2015-12-27.14-41-04.lowlands.fritz.box cat test.test| carmel -qQbsriWIEk 1 test.fsa test.fst 
+2015-12-27.14-41-19.lowlands.fritz.box cat test.test| carmel -qQbsriWIEk 1 test.fst test.fsa 
+2015-12-27.14-41-35.lowlands.fritz.box cat test.test| carmel -bsrik 1 test.fst test.fsa 
+2015-12-27.14-42-08.lowlands.fritz.box cat test.test| carmel -HJbsrik 1 test.fst test.fsa 
+2015-12-27.14-42-57.lowlands.fritz.box emacs predict.sh
+2015-12-27.14-43-09.lowlands.fritz.box emacs predict.sh
+2015-12-27.14-43-12.lowlands.fritz.box emacs predict.sh
+2015-12-27.14-43-15.lowlands.fritz.box sh predict.sh test.fsa test.fst test.test 
+2015-12-27.14-43-40.lowlands.fritz.box cat test.test| carmel -HJbsrik 1 test.fst.noe test.fsa 
+2015-12-27.14-44-19.lowlands.fritz.box grep -v "^$" test.test| carmel -HJbsrik 1 test.fst.noe test.fsa 
+2015-12-27.14-44-29.lowlands.fritz.box grep -v "^$" test.test| carmel -HJbsriQWEk 1 test.fst.noe test.fsa 
+2015-12-27.14-44-38.lowlands.fritz.box grep -v "^$" test.test| carmel -qbsriQWEk 1 test.fst.noe test.fsa 
+2015-12-27.14-44-44.lowlands.fritz.box grep -v "^$" test.test| carmel -qbsriQWEk 1 test.fst.noe test.fsa 
+2015-12-27.14-44-46.lowlands.fritz.box cat predict.sh
+2015-12-27.14-45-08.lowlands.fritz.box grep -v "^$" test.test| carmel -qQbsriWIEk 1 test.fst.noe test.fsa 
+2015-12-27.14-45-34.lowlands.fritz.box grep -v "^$" test.test| carmel -qQbsriWIEk 1 test.fst.noe test.fsa > test.predict
+2015-12-27.14-45-57.lowlands.fritz.box paste test.key test.predict |m
+2015-12-27.14-47-14.lowlands.fritz.box emacs predict.sh
+2015-12-27.14-47-16.lowlands.fritz.box emacs predict.sh
+2015-12-27.14-47-18.lowlands.fritz.box sh predict.sh test.fsa test.fst test.test 
+2015-12-27.14-47-32.lowlands.fritz.box emacs predict.sh
+2015-12-27.14-47-40.lowlands.fritz.box sh predict.sh test.fsa test.fst test.test 
+2015-12-27.14-47-41.lowlands.fritz.box lst
+2015-12-27.14-51-18.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.14-55-54.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.14-56-13.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.14-56-31.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.14-56-47.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.14-58-53.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst
+2015-12-27.14-58-57.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst
+2015-12-27.14-59-07.lowlands.fritz.box sh predict.sh test.fsa test.fst test.test 
+2015-12-27.14-59-11.lowlands.fritz.box lst
+2015-12-27.14-59-18.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.15-00-25.lowlands.fritz.box rm test.fsa.noe 
+2015-12-27.15-01-46.lowlands.fritz.box head test.key test.test.predict 
+2015-12-27.21-16-19.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst
+2015-12-27.21-16-33.lowlands.fritz.box sh predict.sh test.fsa test.fst test.test 
+2015-12-27.21-16-44.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.21-17-20.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst
+2015-12-27.21-17-32.lowlands.fritz.box sh predict.sh test.fsa test.fst test.test 
+2015-12-27.21-17-34.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.21-21-10.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst
+2015-12-27.21-21-19.lowlands.fritz.box sh predict.sh test.fsa test.fst test.test 
+2015-12-27.21-21-24.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.21-21-43.lowlands.fritz.box paste test.test test.test.predict 
+2015-12-27.22-39-16.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.22-41-21.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst
+2015-12-27.22-41-24.lowlands.fritz.box ls
+2015-12-27.22-41-41.lowlands.fritz.box sh predict.sh test.fsa test.fst test.test 
+2015-12-27.22-41-44.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.22-42-18.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst
+2015-12-27.22-42-31.lowlands.fritz.box sh predict.sh test.fsa test.fst test.test 
+2015-12-27.22-42-33.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.22-43-26.lowlands.fritz.box ls
+2015-12-27.22-43-37.lowlands.fritz.box ls ../../gardar_safe/transitions
+2015-12-27.22-43-42.lowlands.fritz.box ls ../../gardar_safe/transitions/src/
+2015-12-27.22-43-55.lowlands.fritz.box ls ../../gardar_safe/transitions/data/
+2015-12-27.22-44-26.lowlands.fritz.box grep carmel ../../gardar_safe/transitions/.history 
+2015-12-27.22-45-48.lowlands.fritz.box carmel -M 1 -! 0 -aHJmZX 0.99999 --disk-cache-derivations --train-cascade test.train test.fst test.fsa
+2015-12-27.22-46-06.lowlands.fritz.box carmel -M 1 -! 0 -aHJmZX 0.99999 --disk-cache-derivations --train-cascade test.train test.fsa test.fst
+2015-12-27.22-46-57.lowlands.fritz.box carmel -g 1 test.fst test.fsa
+2015-12-27.22-47-01.lowlands.fritz.box carmel -ag 1 test.fst test.fsa
+2015-12-27.22-47-05.lowlands.fritz.box carmel -ag 1 test.fst test.fsa
+2015-12-27.22-47-35.lowlands.fritz.box grep Stamford test.fsa
+2015-12-27.22-47-39.lowlands.fritz.box grep Stamford test.fst
+2015-12-27.22-52-40.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst
+2015-12-27.22-52-52.lowlands.fritz.box ls
+2015-12-27.22-53-01.lowlands.fritz.box carmel -ag 1 test.fst test.fsa
+2015-12-27.22-53-13.lowlands.fritz.box carmel -ag 1 test.fsa test.fst
+2015-12-27.22-53-55.lowlands.fritz.box emacs test.fsa
+2015-12-27.22-54-07.lowlands.fritz.box grep -c "\" test.fsa
+2015-12-27.22-54-10.lowlands.fritz.box grep -c "\\" test.fsa
+2015-12-27.22-54-21.lowlands.fritz.box 
+2015-12-27.22-54-36.lowlands.fritz.box 
+2015-12-27.22-54-38.lowlands.fritz.box 
+2015-12-27.22-54-42.lowlands.fritz.box 
+2015-12-27.22-55-29.lowlands.fritz.box emacs test.fsa
+2015-12-27.22-56-32.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst
+2015-12-27.22-56-40.lowlands.fritz.box emacs test.fsa
+2015-12-27.22-56-48.lowlands.fritz.box carmel -ag 1 test.fsa test.fst
+2015-12-27.22-56-58.lowlands.fritz.box carmel -ag 1 test.fst test.fsa
+2015-12-27.22-57-17.lowlands.fritz.box carmel -ag 1 test.fst test.fsa
+2015-12-27.22-57-32.lowlands.fritz.box carmel -ag 5 test.fst test.fsa
+2015-12-27.22-57-50.lowlands.fritz.box sh predict.sh test.fsa test.fst test.test 
+2015-12-27.22-57-53.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.23-00-30.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst
+2015-12-27.23-00-42.lowlands.fritz.box sh predict.sh test.fsa test.fst test.test 
+2015-12-27.23-00-45.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.23-01-51.lowlands.fritz.box grep -v "^$" test.test
+2015-12-27.23-01-55.lowlands.fritz.box grep -v "^$" test.test > tmp
+2015-12-27.23-02-16.lowlands.fritz.box paste tmp test.key |m
+2015-12-27.23-02-40.lowlands.fritz.box paste tmp test.test.predict |m
+2015-12-27.23-02-55.lowlands.fritz.box paste tmp test.test.predict |awk -F "\t" '{print $2}'
+2015-12-27.23-03-10.lowlands.fritz.box paste tmp test.test.predict |awk -F "\t" '{if ($2=="") print}'
+2015-12-27.23-06-05.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst
+2015-12-27.23-07-03.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst
+2015-12-27.23-07-35.lowlands.fritz.box sh predict.sh test.fsa test.fst test.test 
+2015-12-27.23-07-42.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.23-10-46.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst
+2015-12-27.23-11-15.lowlands.fritz.box sh predict.sh test.fsa test.fst test.test 
+2015-12-27.23-11-18.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.23-12-10.lowlands.fritz.box grep UNK test.train 
+2015-12-27.23-13-33.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst
+2015-12-27.23-13-58.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst --data
+2015-12-27.23-14-15.lowlands.fritz.box sh predict.sh test.fsa test.fst test.test 
+2015-12-27.23-14-20.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.23-14-26.lowlands.fritz.box ls
+2015-12-27.23-15-28.lowlands.fritz.box grep UNK test.fsa
+2015-12-27.23-15-39.lowlands.fritz.box grep '"UNK"' test.fsa
+2015-12-27.23-16-43.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst --data
+2015-12-27.23-17-01.lowlands.fritz.box sh predict.sh test.fsa test.fst test.test 
+2015-12-27.23-17-09.lowlands.fritz.box grep UNK test.train 
+2015-12-27.23-17-18.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.23-17-22.lowlands.fritz.box ls
+2015-12-27.23-17-24.lowlands.fritz.box lst
+2015-12-27.23-17-57.lowlands.fritz.box grep UNK test.fsa
+2015-12-27.23-21-34.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst --data
+2015-12-27.23-21-47.lowlands.fritz.box grep UNK test.fsa
+2015-12-27.23-22-03.lowlands.fritz.box carmel -M 1 -! 0 -aHJmZX 0.99999 --disk-cache-derivations --train-cascade test.train test.fsa test.fst
+2015-12-27.23-25-32.lowlands.fritz.box carmel -M 1 -! 0 -aHJmZX 0.99999 --disk-cache-derivations --train-cascade test.train test.fst test.fsa
+2015-12-27.23-25-54.lowlands.fritz.box sh predict.sh test.fsa.trained test.fst.trained test.test 
+2015-12-27.23-26-02.lowlands.fritz.box sh predict.sh test.fsa.trained test.fst.trained test.test 
+2015-12-27.23-26-45.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.23-27-15.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.23-27-20.lowlands.fritz.box grep ADVICE test.fsa
+2015-12-27.23-27-25.lowlands.fritz.box grep TO test.fsa
+2015-12-27.23-27-36.lowlands.fritz.box grep '"TO"' test.fsa
+2015-12-27.23-27-44.lowlands.fritz.box grep '"THEM"' test.fsa
+2015-12-27.23-31-03.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst --data
+2015-12-27.23-31-36.lowlands.fritz.box carmel -M 1 -! 0 -aHJmZX 0.99999 --disk-cache-derivations --train-cascade test.train test.fst test.fsa
+2015-12-27.23-32-38.lowlands.fritz.box python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst --data
+2015-12-27.23-36-10.lowlands.fritz.box carmel -M 1 -! 0 -aHJmZX 0.99999 --disk-cache-derivations --train-cascade test.train test.fst test.fsa
+2015-12-27.23-36-26.lowlands.fritz.box sh predict.sh test.fsa.trained test.fst.trained test.test 
+2015-12-27.23-36-39.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.23-37-44.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.23-38-45.lowlands.fritz.box carmel|grep smoot
+2015-12-27.23-38-52.lowlands.fritz.box carmel|grep pseudo
+2015-12-27.23-39-20.lowlands.fritz.box carmel|grep add
+2015-12-27.23-43-29.lowlands.fritz.box carmel -M 1 -f 0.000001 -aHJmZX 0.99999 --disk-cache-derivations --train-cascade test.train test.fst test.fsa
+2015-12-27.23-47-56.lowlands.fritz.box sh predict.sh test.fsa.trained test.fst.trained test.test 
+2015-12-27.23-48-02.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.23-48-30.lowlands.fritz.box sh predict.sh test.fsa test.fst test.test 
+2015-12-27.23-48-32.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.23-49-56.lowlands.fritz.box sh predict.sh test.fsa.trained test.fst test.test 
+2015-12-27.23-49-58.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.23-50-20.lowlands.fritz.box sh predict.sh test.fsa test.fst.trained test.test 
+2015-12-27.23-50-22.lowlands.fritz.box python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-27.23-57-25.lowlands.fritz.box emacs train_EM.sh
+2015-12-27.23-57-56.lowlands.fritz.box carmel
+2015-12-28.00-01-41.lowlands.fritz.box carmel|grep priors
+2015-12-28.00-01-54.lowlands.fritz.box carmel|grep model
+2015-12-28.00-02-03.lowlands.fritz.box carmel|grep auto
+2015-12-28.00-02-08.lowlands.fritz.box carmel|grep selec
+2015-12-28.08-46-29.Lowlands.local eval 5+3
+2015-12-28.08-46-38.Lowlands.local eval `5+3`
+2015-12-28.08-46-45.Lowlands.local eval(5+3)
+2015-12-28.08-46-49.Lowlands.local eval '5+3'
+2015-12-28.08-47-19.Lowlands.local man eval
+2015-12-28.08-47-27.Lowlands.local eval 5 + 3
+2015-12-28.08-47-32.Lowlands.local eval '5 + 3'
+2015-12-28.08-47-36.Lowlands.local eval "5 + 3"
+2015-12-28.08-47-42.Lowlands.local `eval 5 + 3`
+2015-12-28.08-47-45.Lowlands.local eval `5 + 3`
+2015-12-28.08-47-58.Lowlands.local ls
+2015-12-28.08-48-32.Lowlands.local mv visualize.ipynb notebooks/
+2015-12-28.08-50-05.Lowlands.local mv visualize.ipynb notebooks/
+2015-12-28.08-54-17.Lowlands.local carmel -M 1 -f 0.000001 -aHJmZX 0.99999 --disk-cache-derivations --train-cascade test.train test.fst.trained test.fsa.trained 
+2015-12-28.08-55-51.Lowlands.local carmel -M 1 -f 0.000001 -aHJmZX 0.99999 --disk-cache-derivations --train-cascade test.train test.fst.trained test.fsa.trained 
+2015-12-28.08-56-25.Lowlands.local sh predict.sh test.fsa.trained.trained test.fst.trained.trained test.test
+2015-12-28.08-56-34.Lowlands.local python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-28.08-57-18.Lowlands.local sh predict.sh test.fsa.trained.trained test.fst.trained test.test
+2015-12-28.08-57-26.Lowlands.local python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-28.08-57-55.Lowlands.local sh predict.sh test.fsa.trained test.fst.trained.trained test.test
+2015-12-28.08-58-00.Lowlands.local python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-28.08-58-18.Lowlands.local sh predict.sh test.fsa test.fst.trained.trained test.test
+2015-12-28.08-58-20.Lowlands.local python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-28.11-26-18.Lowlands.local python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst --data --trigram
+2015-12-28.11-26-22.Lowlands.local python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst --data --trigrams
+2015-12-28.11-27-42.Lowlands.local python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst --data --trigrams
+2015-12-28.11-28-25.Lowlands.local python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst --data --trigrams
+2015-12-28.11-28-29.Lowlands.local python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst --data --trigrams
+2015-12-28.11-28-43.Lowlands.local sh predict.sh test.fsa test.fst test.test
+2015-12-28.11-30-54.Lowlands.local python src/create_fsas.py --prefix test --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst --data --trigrams
+2015-12-28.11-31-07.Lowlands.local sh predict.sh test.fsa test.fst test.test
+2015-12-28.11-31-11.Lowlands.local python src/accuracy.py --gold test.key --prediction test.test.predict 
+2015-12-28.11-32-34.Lowlands.local carmel -M 1 -f 0.000001 -aHJmZX 0.99999 --train-cascade test.train test.fst.trained test.fsa.trained 
+2015-12-28.11-33-12.Lowlands.local carmel -M 1 -f 0.000001 -aHJmZX 0.99999 --disk-cache-derivations --train-cascade test.train test.fst test.fsa
+2015-12-28.11-34-26.Lowlands.local ls
+2015-12-28.11-35-18.Lowlands.local cat predict.sh
+2015-12-28.11-36-26.Lowlands.local grep -v "^$" test.test| carmel -qQbsriWIEk 1 test.fst.trained test.fsa.trained
+2015-12-28.11-36-51.Lowlands.local grep -v "^$" test.test| carmel -qQbsriWIEk 1 test.fst.trained test.fsa.trained > test.age.prediction
+2015-12-28.11-36-53.Lowlands.local grep -v "^$" test.test| carmel -qQbsriWIEk 1 test.fst.trained test.fsa.trained > test.age.prediction
+2015-12-28.11-37-04.Lowlands.local python src/accuracy.py --gold test.age --prediction test.age.prediction 
+2015-12-28.11-37-30.Lowlands.local grep -v "^$" test.test| carmel -qQbsriWIEk 1 test.fst test.fsa > test.age.prediction
+2015-12-28.11-37-37.Lowlands.local python src/accuracy.py --gold test.age --prediction test.age.prediction 
+2015-12-28.11-38-52.Lowlands.local emacs predict.sh
+2015-12-28.11-39-34.Lowlands.local sh predict.sh test.fsa.trained test.fst.trained test.test test_trained
+2015-12-28.11-39-50.Lowlands.local python src/accuracy.py --gold test.key --prediction test_trained.prediction 
+2015-12-28.11-40-48.Lowlands.local sh predict.sh test.fsa test.fst test.test bigram_baseline
+2015-12-28.11-40-56.Lowlands.local ls
+2015-12-28.11-41-42.Lowlands.local mv test_trained.age.prediction bigram_trained-1.age.prediction
+2015-12-28.11-41-50.Lowlands.local mv test_trained.prediction bigram_trained-1.prediction
+2015-12-28.11-41-53.Lowlands.local ls
+2015-12-28.11-41-55.Lowlands.local ls test.*
+2015-12-28.11-42-19.Lowlands.local mkdir automata
+2015-12-28.11-42-24.Lowlands.local mv *fs* automata/
+2015-12-28.11-42-25.Lowlands.local ls
+2015-12-28.11-42-49.Lowlands.local mkdir data/output
+2015-12-28.11-43-07.Lowlands.local rm test.*
+2015-12-28.11-43-22.Lowlands.local ls
+2015-12-28.11-44-09.Lowlands.local python src/create_fsas.py --prefix automata/bigram --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst
+2015-12-28.11-44-42.Lowlands.local python src/create_fsas.py --prefix automata/trigram --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst --trigrams
+2015-12-28.11-45-37.Lowlands.local python src/create_fsas.py --prefix automata/trigram --train ../demotagger/data/age_and_gender/sentences/english.and.train --test ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data --dictionary data/en.tags.li --conll ../regional_probs/data/en/en.conll.tagging --fsa --fst --trigrams
+2015-12-28.11-45-40.Lowlands.local ls data/
+2015-12-28.11-45-51.Lowlands.local mkdir data/input
+2015-12-28.11-45-57.Lowlands.local mv data/en.tags.li data/input/
+2015-12-28.11-46-04.Lowlands.local mkdir data/old
+2015-12-28.11-46-06.Lowlands.local ls data/
+2015-12-28.11-46-11.Lowlands.local ls data/*.*
+2015-12-28.11-46-22.Lowlands.local mv data/*.* data/old/
+2015-12-28.11-46-24.Lowlands.local ls data/
+2015-12-28.11-46-29.Lowlands.local ls data/input/
+2015-12-28.11-46-34.Lowlands.local ls data/input/
+2015-12-28.11-47-10.Lowlands.local cp ../demotagger/data/age_and_gender/sentences/english.and.train data/input/
+2015-12-28.11-47-15.Lowlands.local cp ../demotagger/data/age_and_gender/sentences/english.and.train data/input/
+2015-12-28.11-47-27.Lowlands.local cp ../demotagger/data/pos_age_and_gender/en.pos.age.gender.data data/input/
+2015-12-28.11-47-43.Lowlands.local cp --conll ../regional_probs/data/en/en.conll.tagging data/input/
+2015-12-28.11-47-52.Lowlands.local cp ../regional_probs/data/en/en.conll.tagging data/input/
+2015-12-28.11-47-54.Lowlands.local ls data/input/
+2015-12-28.11-49-43.Lowlands.local python src/create_fsas.py --prefix data/input/english --train data/input/english.and.train --test data/input/en.pos.age.gender.data --dictionary data/input/en.tags.li --conll data/input/en.conll.tagging --data
+2015-12-28.11-49-46.Lowlands.local ls data/input/
+2015-12-28.11-50-05.Lowlands.local mkdir data/input/original
+2015-12-28.11-50-16.Lowlands.local mv data/input/en.* data/input/original/
+2015-12-28.11-50-19.Lowlands.local ls data/input/
+2015-12-28.11-50-30.Lowlands.local mv data/input/english.and.train data/input/original/
+2015-12-28.11-51-38.Lowlands.local sh predict.sh automata/bigram.fsa automata/bigram.fst data/input/english.test test
+2015-12-28.11-51-56.Lowlands.local python src/accuracy.py --gold data/input/english.key --prediction test.prediction 
+2015-12-28.11-52-07.Lowlands.local python src/accuracy.py --gold data/input/english.age --prediction test.age.prediction 
+2015-12-28.11-52-56.Lowlands.local sh predict.sh automata/trigram.fsa automata/trigram.fst data/input/english.test test
+2015-12-28.11-52-59.Lowlands.local python src/accuracy.py --gold data/input/english.key --prediction test.prediction 
+2015-12-28.11-53-04.Lowlands.local python src/accuracy.py --gold data/input/english.age --prediction test.age.prediction 
+2015-12-28.11-53-15.Lowlands.local python src/accuracy.py --gold data/input/english.age --prediction test.age.prediction 
+2015-12-28.11-54-27.Lowlands.local python src/create_fsas.py --prefix automata/trigram --train data/input/original/english.and.train --test data/input/original/en.pos.age.gender.data --dictionary data/input/original/en.tags.li --conll data/input/original/en.conll.tagging --fsa --fst --trigrams
+2015-12-28.11-54-53.Lowlands.local sh predict.sh automata/trigram.fsa automata/trigram.fst data/input/english.test test
+2015-12-28.11-54-58.Lowlands.local python src/accuracy.py --gold data/input/english.key --prediction test.prediction 
+2015-12-28.11-55-02.Lowlands.local python src/accuracy.py --gold data/input/english.age --prediction test.age.prediction 
+2015-12-28.11-56-29.Lowlands.local carmel -M 1 -f 0.000001 -aHJmZX 0.99999 --disk-cache-derivations --train-cascade data/input/english.train automata/trigram.fst automata/trigram.fsa
+2015-12-28.11-56-48.Lowlands.local ls automata/
+2015-12-28.11-59-16.Lowlands.local sh predict.sh automata/bigram.fsa.trained automata/bigram.fst.trained data/input/english.test test
+2015-12-28.11-59-20.Lowlands.local python src/accuracy.py --gold data/input/english.age --prediction test.age.prediction 
+2015-12-28.11-59-32.Lowlands.local python src/accuracy.py --gold data/input/english.key --prediction test.prediction 
+2015-12-28.12-00-09.Lowlands.local for x in { 1 .. 5 }; do echo $i; done
+2015-12-28.12-00-13.Lowlands.local for x in { 1 .. 5 }; do echo $x; done
+2015-12-28.12-00-18.Lowlands.local for x in {1 .. 5}; do echo $x; done
+2015-12-28.12-00-25.Lowlands.local for x in {1 ... 5}; do echo $x; done
+2015-12-28.12-00-29.Lowlands.local for x in {1..5}; do echo $x; done
+2015-12-28.12-00-36.Lowlands.local for x in {1..5}; do echo $x+1; done
+2015-12-28.12-00-45.Lowlands.local for x in {1..5}; do echo `eval $x+1`; done
+2015-12-28.12-02-18.Lowlands.local emacs EM_iteration.sh
+2015-12-28.12-06-03.Lowlands.local emacs EM_iteration.sh
+2015-12-28.12-11-14.Lowlands.local emacs EM_iteration.sh
+2015-12-28.12-13-24.Lowlands.local emacs EM_iteration.sh
+2015-12-28.12-14-06.Lowlands.local carmel -M 1 -f 0.000001 -aHJmZX 0.99999 --disk-cache-derivations --train-cascade data/input/english.train automata/bigram.fst automata/bigram.fsa
+2015-12-28.12-14-41.Lowlands.local carmel|grep prior
+2015-12-28.12-41-21.Lowlands.local emacs EM_iteration.sh
+2015-12-28.12-41-32.Lowlands.local head -100 data/input/english.train 
+2015-12-28.12-41-36.Lowlands.local head -100 data/input/english.train > tmp
+2015-12-28.12-41-53.Lowlands.local sh EM_iteration.sh tmp automata/bigram
+2015-12-28.12-42-14.Lowlands.local cat train_EM.sh 
+2015-12-28.12-42-24.Lowlands.local cat predict.sh
+2015-12-28.12-42-46.Lowlands.local emacs EM_iteration.sh
+2015-12-28.12-43-09.Lowlands.local emacs train_EM.sh 
+2015-12-28.12-43-12.Lowlands.local ls automata/
+2015-12-28.12-45-19.Lowlands.local lst automata/
+2015-12-28.12-45-40.Lowlands.local sh EM_iteration.sh tmp automata/bigram
+2015-12-28.12-48-29.Lowlands.local for i in {1..20}; do sh predict.sh automata/bigram.iteration$i.fsa automata/bigram.iteration$i.fst data/input/english.test tmp; python src/accuracy.py --gold data/input/english.key --prediction tmp.prediction; done
+2015-12-28.12-48-29.Lowlands.local for i in {1..20}; do sh predict.sh automata/bigram.iteration$i.fsa automata/bigram.iteration$i.fst data/input/english.test tmp; python src/accuracy.py --gold data/input/english.key --prediction tmp.prediction; done
+2015-12-28.12-48-31.Lowlands.local ls
+2015-12-28.12-48-43.Lowlands.local rm 48*
+2015-12-28.12-49-15.Lowlands.local emacs EM_iteration.sh
+2015-12-28.12-49-38.Lowlands.local rm *~
+2015-12-28.12-49-39.Lowlands.local ls
+2015-12-28.12-49-43.Lowlands.local rm tmp*
+2015-12-28.12-49-50.Lowlands.local ls test.
+2015-12-28.12-49-52.Lowlands.local ls test.*
+2015-12-28.12-49-55.Lowlands.local rm test.*
+2015-12-28.12-49-57.Lowlands.local ls
+2015-12-28.12-50-09.Lowlands.local ls data/o
+2015-12-28.12-50-11.Lowlands.local ls data/output/
+2015-12-28.12-50-31.Lowlands.local mv *prediction data/output/
+2015-12-28.12-50-32.Lowlands.local ls
+2015-12-28.12-50-57.Lowlands.local emacs train_EM.sh 
+2015-12-28.12-51-18.Lowlands.local bd
+2015-12-28.12-51-21.Lowlands.local rm -rf bin/
+2015-12-28.12-51-22.Lowlands.local ls
+2015-12-28.17-01-24.Lowlands.local echo "# transitions" >> README.md
+2015-12-28.17-01-24.Lowlands.local git init
+2015-12-28.17-01-24.Lowlands.local git add README.md
+2015-12-28.17-01-24.Lowlands.local git commit -m "first commit"
+2015-12-28.17-01-24.Lowlands.local git remote add origin https://github.com/dirkhovy/transitions.git
+2015-12-28.17-01-41.Lowlands.local git push -u origin master
+2015-12-28.17-01-41.Lowlands.local git push -u origin master
+2015-12-28.17-01-50.Lowlands.local git add *sh
+2015-12-28.17-01-57.Lowlands.local git add .history 
+2015-12-28.17-02-12.Lowlands.local git add src
+2015-12-28.17-02-23.Lowlands.local ls automata/
+2015-12-28.17-02-36.Lowlands.local ls automata/*iter*
+2015-12-28.17-02-41.Lowlands.local rm automata/*iter*
+2015-12-28.17-02-44.Lowlands.local ls automata/
+2015-12-28.17-03-02.Lowlands.local git add automata/*fsa
+2015-12-28.17-03-05.Lowlands.local git add automata/*fst
