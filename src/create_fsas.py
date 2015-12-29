@@ -1,8 +1,10 @@
 import argparse
 import sys
+import nltk
+import re
 from collections import defaultdict, Counter
 
-import nltk
+numbers = re.compile(r"[0123456789]")
 
 parser = argparse.ArgumentParser(
     description="create FSAs from a CoNLL style file, one word with possible tags per line")
@@ -84,6 +86,7 @@ def read(fname, target):
                 word, pos_tag = elements
                 word = word.replace('"', "''")
                 word = word.replace('\\', '')
+                word = re.sub(numbers, '0', word)
                 sentence.append(word)
                 tags.append(pos_tag)
 

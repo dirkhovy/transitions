@@ -798,3 +798,9 @@
 2015-12-29.16-59-49.Lowlands.local jenv versions
 2015-12-29.18-15-59.Lowlands.local jenv versions
 2015-12-29.18-16-04.Lowlands.local jenv versions
+2015-12-29.18-17-24.Lowlands.local git commit -am "age emissions"
+2015-12-29.18-17-30.Lowlands.local pull
+2015-12-29.18-17-36.Lowlands.local push
+2015-12-29.18-19-23.Lowlands.local push
+2015-12-29.18-19-40.Lowlands.local grep git .history
+2015-12-29.18-19-52.Lowlands.local push
