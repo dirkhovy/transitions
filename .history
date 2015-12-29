@@ -782,3 +782,19 @@
 2015-12-29.15-07-05.zen push
 2015-12-29.15-07-22.zen git push
 2015-12-29.15-09-22.zen emacs .gitignore
+2015-12-29.15-19-05.Lowlands.local git reset --hard origin/master
+2015-12-29.15-19-06.Lowlands.local git reset --hard origin/master
+2015-12-29.15-19-10.Lowlands.local ls data/output/
+2015-12-29.15-19-19.Lowlands.local ls data/input/
+2015-12-29.16-54-22.Lowlands.local which java
+2015-12-29.16-54-50.Lowlands.local java --version
+2015-12-29.16-54-54.Lowlands.local java -version
+2015-12-29.16-58-17.Lowlands.local brew install jenv
+2015-12-29.16-58-34.Lowlands.local jenv versions
+2015-12-29.16-59-10.Lowlands.local jenv global system
+2015-12-29.16-59-39.Lowlands.local emacs ~/.profile
+2015-12-29.16-59-42.Lowlands.local source ~/.profile
+2015-12-29.16-59-45.Lowlands.local jenv global system
+2015-12-29.16-59-49.Lowlands.local jenv versions
+2015-12-29.18-15-59.Lowlands.local jenv versions
+2015-12-29.18-16-04.Lowlands.local jenv versions

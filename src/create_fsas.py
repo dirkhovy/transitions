@@ -30,6 +30,7 @@ TAGS = set(['.', 'ADJ', 'ADP', 'ADV', 'CONJ', 'DET', 'NOUN', 'NUM', 'PRON', 'PRT
 AGE_GROUPS = set(['U35', 'O45'])
 SMOOTHING = 0.000000000001
 
+
 def read(fname, target):
     """
     read in a CoNLL style file
@@ -195,7 +196,8 @@ if args.fsa:
         tag_total = sum(words.values())
         for word, count in words.items():
             word = word.replace('"', "''")
-            fsa.write('(S (S "%s" "%s" %s))\n' % (tag, word, count / tag_total))
+            for age_group in AGE_GROUPS:
+                fsa.write('(S (S "%s_%s" "%s" %s))\n' % (tag, age_group, word, count / tag_total))
     fsa.close()
 
 if args.fst:
@@ -207,31 +209,38 @@ if args.fst:
     # TODO: experiment with age-specific emissions - should not make a difference (seems to be in transitions)...
     for age_group in AGE_GROUPS:
         fst.write('(S (S-%s "%s" *e* 0.5))\n' % (age_group, age_group))
+        # fst.write('(S (S_DECISION "%s" *e* 0.5))\n' % (age_group))
+        # fst.write('(S_DECISION (S-%s *e* *e* 1))\n' % (age_group))
 
         begin_total = sum(begin.values())
         for tag, tag_count in begin.items():
-            fst.write('(S-%s (%s-%s *e* "%s" %s))\n' % (age_group, age_group, tag, tag, tag_count / begin_total))
+            fst.write('(S-%s (%s-%s *e* "%s_%s" %s))\n' % (
+            age_group, age_group, tag, tag, age_group, tag_count / begin_total))
 
         # bigram transitions
         if not args.trigrams:
             for tag1, tags in transitions.items():
                 tag_total = sum(tags.values())
                 for tag2, count in tags.items():
-                    fst.write('(%s-%s (%s-%s *e* "%s" %s))\n' % (age_group, tag1, age_group, tag2, tag2, count / tag_total))
+                    fst.write('(%s-%s (%s-%s *e* "%s_%s" %s))\n' % (
+                    age_group, tag1, age_group, tag2, tag2, age_group, count / tag_total))
 
         # transitions and end for trigrams
         if args.trigrams:
             end_total = sum(end_trigrams.values())
             for (tag1, tag2), tags in trigrams.items():
-                fst.write('(%s-%s (%s-%s-%s *e* "%s" %s))\n' % (age_group, tag1, age_group, tag1, tag2, tag2,
-                                                                transitions[tag1][tag2] / sum(
-                                                                    transitions[tag1].values())))
+                fst.write(
+                    '(%s-%s (%s-%s-%s *e* "%s_%s" %s))\n' % (age_group, tag1, age_group, tag1, tag2, tag2, age_group,
+                                                             transitions[tag1][tag2] / sum(
+                                                                 transitions[tag1].values())))
                 tag_total = sum(tags.values())
                 for tag3, count in tags.items():
                     fst.write(
-                        '(%s-%s-%s (%s-%s-%s *e* "%s" %s))\n' % (age_group, tag1, tag2, age_group, tag2, tag3, tag3, count / tag_total))
+                        '(%s-%s-%s (%s-%s-%s *e* "%s_%s" %s))\n' % (
+                        age_group, tag1, tag2, age_group, tag2, tag3, tag3, age_group, count / tag_total))
 
-                fst.write('(%s-%s-%s (END *e* *e* %s))\n' % (age_group, tag1, tag2, end_trigrams[(tag1, tag2)]/ end_total))
+                fst.write(
+                    '(%s-%s-%s (END *e* *e* %s))\n' % (age_group, tag1, tag2, end_trigrams[(tag1, tag2)] / end_total))
 
         # end for bigrams
         else:
