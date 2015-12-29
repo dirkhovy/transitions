@@ -778,3 +778,7 @@
 2015-12-29.15-06-23.zen for i in {0..20}; do python src/accuracy.py --gold data/input/english.eval.age --prediction automata/bigram.iteration$i.eval.age.prediction; done > data/output/bigram_iterations.eval.age.txt
 2015-12-29.15-06-37.zen for i in {0..20}; do python src/accuracy.py --gold data/input/english.dev.age --prediction automata/bigram.iteration$i.dev.age.prediction; done > data/output/bigram_iterations.dev.age.txt
 2015-12-29.15-06-44.zen git add data/output/
+2015-12-29.15-06-52.zen git commit -am "first outputs"
+2015-12-29.15-07-05.zen push
+2015-12-29.15-07-22.zen git push
+2015-12-29.15-09-22.zen emacs .gitignore
