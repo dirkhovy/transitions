@@ -1,6 +1,7 @@
 #!/bin/bash
 # FSA FST data
-CARMEL="/Users/dirkhovy/Tools/graehl/carmel/bin/macosx/carmel"
+#CARMEL="/Users/dirkhovy/Tools/graehl/carmel/bin/macosx/carmel"
+CARMEL="/home/dirkh/graehl/carmel/bin/linux64/carmel"
 
 # predict tags
 $CARMEL --project-right --project-identity-fsa -HJm $2 > $2.noe

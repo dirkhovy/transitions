@@ -629,3 +629,152 @@
 2015-12-28.17-02-44.Lowlands.local ls automata/
 2015-12-28.17-03-02.Lowlands.local git add automata/*fsa
 2015-12-28.17-03-05.Lowlands.local git add automata/*fst
+2015-12-28.17-46-10.zen mv ../data.zip .
+2015-12-28.17-46-24.zen unzip data.zip 
+2015-12-28.17-46-55.zen rm -rf __MACOSX/
+2015-12-28.17-47-01.zen ls data
+2015-12-28.17-47-11.zen ls data/old/
+2015-12-28.17-47-21.zen rm data.zip 
+2015-12-28.17-49-20.zen grep carmel ~/.bashrc
+2015-12-28.17-49-49.zen emacs train_EM.sh 
+2015-12-28.17-49-54.zen cat *sh
+2015-12-28.17-50-11.zen emacs predict.sh 
+2015-12-28.17-50-55.zen htop
+2015-12-28.17-51-48.zen sh EM_iteration.sh tmp automata/bigram
+2015-12-28.17-52-38.zen sh EM_iteration.sh tmp automata/bigram
+2015-12-28.17-52-43.zen ls data/input/
+2015-12-28.17-54-13.zen sh EM_iteration.sh /home/dirkh/transitions/data/input/english.train /home/dirkh/transitions/automata/bigram
+2015-12-28.17-54-14.zen sh EM_iteration.sh /home/dirkh/transitions/data/input/english.train /home/dirkh/transitions/automata/bigram
+2015-12-28.17-54-56.zen nohup sh EM_iteration.sh /home/dirkh/transitions/data/input/english.train /home/dirkh/transitions/automata/bigram > bigram.out 2> bigram.err &
+2015-12-28.17-55-41.zen nohup sh EM_iteration.sh /home/dirkh/transitions/data/input/english.train /home/dirkh/transitions/automata/trigram > trigram.out 2> trigram.err &
+2015-12-28.17-56-08.zen tail -f trigram.err 
+2015-12-28.17-56-28.zen tail -f trigram.err 
+2015-12-29.12-58-33.zen lst
+2015-12-29.12-58-47.zen tail -f bigram.err 
+2015-12-29.12-58-58.zen tail -f trigram.err 
+2015-12-29.12-59-00.zen lst automata/
+2015-12-29.12-59-52.zen for i in {1..20};do echo $i; done
+2015-12-29.13-00-33.zen emacs EM_iteration.sh 
+2015-12-29.13-00-36.zen which bash
+2015-12-29.13-00-59.zen for i in {1..20}; do echo $i; done
+2015-12-29.13-01-24.zen emacs EM_iteration.sh 
+2015-12-29.13-01-30.zen rm 31697FS*
+2015-12-29.13-01-59.zen rm 31697FS*
+2015-12-29.13-02-46.zen ls automata/
+2015-12-29.13-03-29.zen sh predict.sh automata/bigram.iteration{1..20}.fsa automata/bigram.iteration{1..20}.fst data/input/english.test test
+2015-12-29.13-04-12.zen sh predict.sh automata/bigram.iteration\{1..20\}.fsa automata/bigram.iteration\{1..20\}.fst data/input/english.test test
+2015-12-29.13-04-17.zen sh predict.sh automata/bigram.iteration\{1..20\}.fsa automata/bigram.iteration\{1..20\}.fst data/input/english.test test
+2015-12-29.13-04-37.zen python src/accuracy.py --gold data/input/english.age --prediction test.age.prediction
+2015-12-29.13-04-53.zen python src/accuracy.py --gold data/input/english.key --prediction test.prediction
+2015-12-29.13-04-59.zen lst
+2015-12-29.13-05-41.zen sh predict.sh automata/trigram.iteration\{1..20\}.fsa automata/trigram.iteration\{1..20\}.fst data/input/english.test test
+2015-12-29.13-05-49.zen python src/accuracy.py --gold data/input/english.key --prediction test.prediction
+2015-12-29.13-08-22.zen emacs test.sh
+2015-12-29.13-08-42.zen nohup sh test.sh > test.out &
+2015-12-29.13-08-56.zen emacs test.sh
+2015-12-29.13-08-59.zen nohup sh test.sh > test.out &
+2015-12-29.13-09-21.zen emacs test.sh
+2015-12-29.13-09-23.zen nohup sh test.sh > test.out &
+2015-12-29.13-09-39.zen emacs test.sh
+2015-12-29.13-09-42.zen nohup sh test.sh > test.out &
+2015-12-29.13-11-09.zen emacs test.sh
+2015-12-29.13-11-19.zen $BASH_VERSION 
+2015-12-29.13-11-26.zen $BASH_VERSINFO 
+2015-12-29.13-11-51.zen seq(1 2 10)
+2015-12-29.13-11-54.zen echo seq(1 2 10)
+2015-12-29.13-12-07.zen for i in seq(1 2 10); do echo $i; done
+2015-12-29.13-12-24.zen for i in $(seq 1 2 10); do echo $i; done
+2015-12-29.13-12-34.zen for i in $(seq 1 2 10); do echo $i; done
+2015-12-29.13-12-47.zen emacs test.sh
+2015-12-29.13-12-49.zen emacs test.sh
+2015-12-29.13-12-51.zen nohup sh test.sh > test.out &
+2015-12-29.13-13-31.zen emacs EM_iteration.sh 
+2015-12-29.13-14-34.zen sh predict.sh automata/trigram.fsa automata/trigramfst data/input/english.test test
+2015-12-29.13-15-10.zen sh predict.sh automata/trigram.fsa automata/trigram.fst data/input/english.test test
+2015-12-29.13-15-16.zen python src/accuracy.py --gold data/input/english.key --prediction test.prediction
+2015-12-29.13-17-43.zen emacs EM_iteration.sh 
+2015-12-29.13-17-55.zen emacs test.sh
+2015-12-29.13-17-58.zen emacs test.sh
+2015-12-29.13-18-00.zen nohup sh test.sh > test.out &
+2015-12-29.13-18-12.zen emacs test.sh
+2015-12-29.13-19-24.zen emacs EM_iteration.sh 
+2015-12-29.13-19-30.zen htop
+2015-12-29.13-21-46.zen nohup sh EM_iteration.sh /home/dirkh/transitions/data/input/english.train /home/dirkh/transitions/automata/bigram > bigram.out 2> bigram.err &
+2015-12-29.13-21-53.zen nohup sh EM_iteration.sh /home/dirkh/transitions/data/input/english.train /home/dirkh/transitions/automata/trigram > trigram.out 2> trigram.err &
+2015-12-29.13-21-57.zen lst automata/
+2015-12-29.13-22-37.zen tail -f *err
+2015-12-29.13-22-49.zen tail -f bigram.err
+2015-12-29.13-22-55.zen tail -f trigram.err
+2015-12-29.13-24-18.zen tail -f bigram.err
+2015-12-29.13-24-20.zen lst automata/
+2015-12-29.13-24-42.zen ls automata/*..*
+2015-12-29.13-24-53.zen rm automata/*..*
+2015-12-29.13-25-01.zen tail -f bigram.err
+2015-12-29.13-25-04.zen lst automata/
+2015-12-29.13-28-45.zen lst automata/
+2015-12-29.13-28-50.zen lst automata/
+2015-12-29.13-29-21.zen for i in 1 2; do python src/accuracy.py --gold data/input/english.key --prediction automata/bigram.iteration$i.prediction; done
+2015-12-29.13-29-44.zen for i in 1 2; do python src/accuracy.py --gold data/input/english.key --prediction automata/bigram.iteration$i.prediction; done
+2015-12-29.13-31-05.zen sh predict.sh automata/bigram.fsa automata/bigram.fst data/input/english.test automata/bigram.iteration0
+2015-12-29.13-31-44.zen sh predict.sh automata/trigram.fsa automata/trigram.fst data/input/english.test automata/trigram.iteration0
+2015-12-29.13-32-14.zen for i in 0 1 2; do python src/accuracy.py --gold data/input/english.key --prediction automata/bigram.iteration$i.prediction; done
+2015-12-29.13-32-21.zen lst automata/
+2015-12-29.13-32-40.zen tail -f trigram.err 
+2015-12-29.13-32-44.zen lst automata/trigram*
+2015-12-29.13-32-55.zen for i in 0 1 2 3 4; do python src/accuracy.py --gold data/input/english.key --prediction automata/bigram.iteration$i.prediction; done
+2015-12-29.13-33-12.zen for i in 0 1 2 3 4; do python src/accuracy.py --gold data/input/english.key --prediction automata/trigram.iteration$i.prediction; done
+2015-12-29.13-37-28.zen for i in 0 1 2 3 4; do python src/accuracy.py --gold data/input/english.key --prediction automata/trigram.iteration$i.prediction; done
+2015-12-29.13-37-38.zen lst automata/bigram.iteration*
+2015-12-29.13-37-55.zen for i in 0 1 2 3 4 5 6; do python src/accuracy.py --gold data/input/english.key --prediction automata/bigram.iteration$i.prediction; done
+2015-12-29.13-45-10.zen for i in 0 1 2 3 4 5 6 7 8; do python src/accuracy.py --gold data/input/english.key --prediction automata/bigram.iteration$i.prediction; done
+2015-12-29.13-50-22.zen lst automata/
+2015-12-29.13-50-27.zen lst automata/trigram.iteration*
+2015-12-29.13-50-31.zen ls automata/trigram.iteration*
+2015-12-29.13-50-42.zen for i in 0 1 2 3 4; do python src/accuracy.py --gold data/input/english.key --prediction automata/trigram.iteration$i.prediction; done
+2015-12-29.13-57-37.zen ls automata/trigram.iteration*
+2015-12-29.13-57-41.zen for i in 0 1 2 3 4; do python src/accuracy.py --gold data/input/english.key --prediction automata/trigram.iteration$i.prediction; done
+2015-12-29.13-58-15.zen for i in 0 1 2 3 4; do python src/accuracy.py --gold data/input/english.age --prediction automata/trigram.iteration$i.age.prediction; done
+2015-12-29.13-59-43.zen ls automata/trigram.iteration*
+2015-12-29.14-16-32.zen ls automata/trigram.iteration*
+2015-12-29.14-16-48.zen for i in 0 1 2 3 4 5 6; do python src/accuracy.py --gold data/input/english.age --prediction automata/trigram.iteration$i.age.prediction; done
+2015-12-29.14-17-04.zen for i in 0 1 2 3 4 5 6; do python src/accuracy.py --gold data/input/english.key --prediction automata/trigram.iteration$i.prediction; done
+2015-12-29.14-17-28.zen for i in {0..20}; do python src/accuracy.py --gold data/input/english.key --prediction automata/bigram.iteration$i.prediction; done
+2015-12-29.14-37-12.zen for i in {0..20}; do python src/accuracy.py --gold data/input/english.key --prediction automata/bigram.iteration$i.prediction; done
+2015-12-29.14-45-16.zen lst data/input/
+2015-12-29.14-45-43.zen lst data/input/
+2015-12-29.14-48-33.zen for i in {0..20}; do for t in dev eval; do sh predict.sh automata/bigram.iteration$i.fsa automata/bigram.iteration$i.fst data/input/english.$t automata/bigram.iteration$i.$t; done
+2015-12-29.14-48-42.zen for i in {0..20}; do for t in dev eval; do sh predict.sh automata/bigram.iteration$i.fsa automata/bigram.iteration$i.fst data/input/english.$t automata/bigram.iteration$i.$t; done; done
+2015-12-29.14-49-07.zen for i in {0..20}; do for t in dev eval; do sh predict.sh automata/bigram.iteration$i.fsa automata/bigram.iteration$i.fst data/input/english.$t automata/bigram.iteration$i.$t; done; done
+2015-12-29.14-49-33.zen nohup for i in {1..20}; do for t in dev eval; do sh predict.sh automata/bigram.iteration$i.fsa automata/bigram.iteration$i.fst data/input/english.$t automata/bigram.iteration$i.$t; done; done > pred.out 2> pred.err&
+2015-12-29.14-49-59.zen for i in {1..20}; do for t in dev eval; do sh predict.sh automata/bigram.iteration$i.fsa automata/bigram.iteration$i.fst data/input/english.$t automata/bigram.iteration$i.$t; done; done &
+2015-12-29.14-50-15.zen for i in {1..20}; do for t in dev eval; do sh predict.sh automata/bigram.iteration$i.fsa automata/bigram.iteration$i.fst data/input/english.$t automata/bigram.iteration$i.$t; done; done &
+2015-12-29.14-50-15.zen for i in {1..20}; do for t in dev eval; do sh predict.sh automata/bigram.iteration$i.fsa automata/bigram.iteration$i.fst data/input/english.$t automata/bigram.iteration$i.$t; done; done &
+2015-12-29.14-50-16.zen for i in {1..20}; do for t in dev eval; do sh predict.sh automata/bigram.iteration$i.fsa automata/bigram.iteration$i.fst data/input/english.$t automata/bigram.iteration$i.$t; done; done &
+2015-12-29.14-50-18.zen lst automata/
+2015-12-29.14-50-44.zen lst automata/
+2015-12-29.14-51-15.zen for i in {1..20}; do for t in dev eval; do sh predict.sh automata/bigram.iteration$i.fsa automata/bigram.iteration$i.fst data/input/english.$t automata/bigram.iteration$i.$t; done; done 2> /dev/null&
+2015-12-29.14-51-23.zen lst automata/|head
+2015-12-29.14-51-27.zen lst automata/|head
+2015-12-29.14-51-58.zen for i in {1..20}; do python src/accuracy.py --gold data/input/english.dev.key --prediction automata/bigram.iteration$i.dev.prediction; done
+2015-12-29.14-52-10.zen for i in {1..20}; do python src/accuracy.py --gold data/input/english.dev.key --prediction automata/bigram.iteration$i.dev.prediction; done
+2015-12-29.14-53-00.zen sh predict.sh automata/bigram.fsa automata/bigram.fst data/input/english.dev automata/bigram.iteration0.dev
+2015-12-29.14-53-33.zen sh predict.sh automata/trigram.fsa automata/trigram.fst data/input/english.dev automata/trigram.iteration0.dev
+2015-12-29.14-53-59.zen sh predict.sh automata/trigram.fsa automata/trigram.fst data/input/english.eval automata/trigram.iteration0.eval
+2015-12-29.14-54-26.zen sh predict.sh automata/bigram.fsa automata/bigram.fst data/input/english.eval automata/bigram.iteration0.eval
+2015-12-29.14-54-40.zen for i in {0..20}; do python src/accuracy.py --gold data/input/english.dev.key --prediction automata/bigram.iteration$i.dev.prediction; done
+2015-12-29.14-55-24.zen for i in {0..20}; do python src/accuracy.py --gold data/input/english.eval.key --prediction automata/bigram.iteration$i.eval.prediction; done
+2015-12-29.14-55-39.zen for i in {0..20}; do python src/accuracy.py --gold data/input/english.eval.key --prediction automata/bigram.iteration$i.eval.prediction; done
+2015-12-29.14-56-23.zen lst automata/*dev.prediction
+2015-12-29.14-56-47.zen for i in {0..20}; do python src/accuracy.py --gold data/input/english.dev.key --prediction automata/bigram.iteration$i.dev.prediction; done
+2015-12-29.14-57-01.zen for i in {0..20}; do python src/accuracy.py --gold data/input/english.eval.key --prediction automata/bigram.iteration$i.eval.prediction; done
+2015-12-29.14-57-50.zen for i in {0..20}; do python src/accuracy.py --gold data/input/english.key --prediction automata/bigram.iteration$i.prediction; done
+2015-12-29.14-58-54.zen emacs EM_iteration.sh 
+2015-12-29.14-59-11.zen emacs EM_iteration.sh 
+2015-12-29.15-03-57.zen lst automata/*dev.prediction
+2015-12-29.15-04-07.zen for i in {0..20}; do python src/accuracy.py --gold data/input/english.eval.key --prediction automata/bigram.iteration$i.eval.prediction; done
+2015-12-29.15-05-05.zen for i in {0..20}; do python src/accuracy.py --gold data/input/english.eval.key --prediction automata/bigram.iteration$i.eval.prediction; done > data/output/bigram_iterations.eval.txt
+2015-12-29.15-05-23.zen for i in {0..20}; do python src/accuracy.py --gold data/input/english.dev.key --prediction automata/bigram.iteration$i.dev.prediction; done > data/output/bigram_iterations.dev.txt
+2015-12-29.15-05-40.zen for i in {0..20}; do python src/accuracy.py --gold data/input/english.eval.age --prediction automata/bigram.iteration$i.eval.age.prediction; done
+2015-12-29.15-06-23.zen for i in {0..20}; do python src/accuracy.py --gold data/input/english.eval.age --prediction automata/bigram.iteration$i.eval.age.prediction; done > data/output/bigram_iterations.eval.age.txt
+2015-12-29.15-06-37.zen for i in {0..20}; do python src/accuracy.py --gold data/input/english.dev.age --prediction automata/bigram.iteration$i.dev.age.prediction; done > data/output/bigram_iterations.dev.age.txt
+2015-12-29.15-06-44.zen git add data/output/
