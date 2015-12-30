@@ -105,8 +105,18 @@ in_dict = set()
 
 if args.data:
     test_file = open('%s.test' % args.prefix, 'w')
-    key_file = open('%s.key' % args.prefix, 'w')
-    age_file = open('%s.age' % args.prefix, 'w')
+    test_key_file = open('%s.test.key' % args.prefix, 'w')
+    test_age_file = open('%s.test.age' % args.prefix, 'w')
+
+    dev_file = open('%s.dev' % args.prefix, 'w')
+    dev_key_file = open('%s.dev.key' % args.prefix, 'w')
+    dev_age_file = open('%s.dev.age' % args.prefix, 'w')
+
+    eval_file = open('%s.eval' % args.prefix, 'w')
+    eval_key_file = open('%s.eval.key' % args.prefix, 'w')
+    eval_age_file = open('%s.eval.age' % args.prefix, 'w')
+
+    instances = defaultdict(list)
 
 # read in test, record the emission parameters
 # TODO: add in UNKs here...
@@ -115,18 +125,41 @@ for (sentence, tags, labels) in read(args.test, 'age'):
     word_count.update(sentence)
 
     if args.data:
+        instances[labels].append((sentence, tags))
+
         test_file.write('\n"%s"\n' % ('" "'.join(sentence)))
-        key_file.write('%s\n' % (' '.join(tags)))
-        age_file.write('%s\n' % (labels))
+        test_key_file.write('%s\n' % (' '.join(tags)))
+        test_age_file.write('%s\n' % (labels))
 
     for (word, tag) in zip(sentence, tags):
         emissions[tag][word] += SMOOTHING
         in_dict.add(word)
 
 if args.data:
+    for label, items in instances.items():
+        half = len(items)
+        for i, (sentence, tags) in enumerate(items):
+            if i < half:
+                dev_file.write('\n"%s"\n' % ('" "'.join(sentence)))
+                dev_key_file.write('%s\n' % (' '.join(tags)))
+                dev_age_file.write('%s\n' % (label))
+            else:
+                eval_file.write('\n"%s"\n' % ('" "'.join(sentence)))
+                eval_key_file.write('%s\n' % (' '.join(tags)))
+                eval_age_file.write('%s\n' % (label))
+
     test_file.close()
-    key_file.close()
-    age_file.close()
+    test_key_file.close()
+    test_age_file.close()
+
+    dev_file.close()
+    dev_key_file.close()
+    dev_age_file.close()
+
+    eval_file.close()
+    eval_key_file.close()
+    eval_age_file.close()
+
 
 # read in dict, record the emission parameters
 print("reading dictionary", file=sys.stderr)
