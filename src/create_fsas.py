@@ -137,7 +137,7 @@ for (sentence, tags, labels) in read(args.test, 'age'):
 
 if args.data:
     for label, items in instances.items():
-        half = len(items)
+        half = int(len(items)/2)
         for i, (sentence, tags) in enumerate(items):
             if i < half:
                 dev_file.write('\n"%s"\n' % ('" "'.join(sentence)))

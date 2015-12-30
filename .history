@@ -808,3 +808,5 @@
 2015-12-29.18-34-40.Lowlands.local push
 2015-12-30.13-28-07.Lowlands.local git add .gitignore
 2015-12-30.13-28-24.Lowlands.local git add -f .gitignore
+2015-12-30.13-28-36.Lowlands.local git commit -am "accuracy"
+2015-12-30.13-28-45.Lowlands.local push
